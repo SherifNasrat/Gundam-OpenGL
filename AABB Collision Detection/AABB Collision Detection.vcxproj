@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3BDBCA46-0447-42FE-B825-3AD809B37422}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>AABBCollisionDetection</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Application Manager\ApplicationManager.cpp" />
+    <ClCompile Include="CollisionDetection\AABoundingBox.cpp" />
+    <ClCompile Include="CollisionDetection\CollidableModel.cpp" />
+    <ClCompile Include="CollisionDetection\CollisionManager.cpp" />
+    <ClCompile Include="EulerCamera\EulerCamera.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GraphicsDevice\KeyFrameAnimationShader.cpp" />
+    <ClCompile Include="GraphicsDevice\ShaderProgram.cpp" />
+    <ClCompile Include="GUI.cpp" />
+    <ClCompile Include="Hero.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MD2Model\md2model.cpp" />
+    <ClCompile Include="MD2Model\vertexBufferObject.cpp" />
+    <ClCompile Include="Model\Model.cpp" />
+    <ClCompile Include="Renderer\Renderer.cpp" />
+    <ClCompile Include="Scene\Model3D.cpp" />
+    <ClCompile Include="Scene\ModelNode.cpp" />
+    <ClCompile Include="Scene\TexturedModel.cpp" />
+    <ClCompile Include="ShaderProgram2D.cpp" />
+    <ClCompile Include="Shaders\shader.cpp" />
+    <ClCompile Include="Skybox.cpp" />
+    <ClCompile Include="Texture\Texture Loader\stb_image.c" />
+    <ClCompile Include="Texture\texture.cpp" />
+    <ClCompile Include="Third Person Camera\ThirdPersonCamera.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\..\Lab8-Project helper\Lab8-Project helper\text\GUIFragmentShader.fragmentshader" />
+    <None Include="..\..\..\..\..\..\Lab8-Project helper\Lab8-Project helper\text\GUIVertexShader.vertexshader" />
+    <None Include="TextureLighting.fragmentshader" />
+    <None Include="KeyframeAnimation.vertexshader" />
+    <None Include="SimpleTransformWithColor.vertexshader" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application Manager\ApplicationManager.h" />
+    <ClInclude Include="CollisionDetection\AABoundingBox.h" />
+    <ClInclude Include="CollisionDetection\CollidableModel.h" />
+    <ClInclude Include="CollisionDetection\CollisionManager.h" />
+    <ClInclude Include="EulerCamera\EulerCamera.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GraphicsDevice\KeyFrameAnimationShader.h" />
+    <ClInclude Include="GraphicsDevice\ShaderProgram.h" />
+    <ClInclude Include="GUI.h" />
+    <ClInclude Include="Hero.h" />
+    <ClInclude Include="MD2Model\md2model.h" />
+    <ClInclude Include="MD2Model\vertexBufferObject.h" />
+    <ClInclude Include="Model\Model.h" />
+    <ClInclude Include="Renderer\Renderer.h" />
+    <ClInclude Include="Scene\Model3D.h" />
+    <ClInclude Include="Scene\ModelNode.h" />
+    <ClInclude Include="Scene\TexturedModel.h" />
+    <ClInclude Include="ShaderProgram2D.h" />
+    <ClInclude Include="Shaders\shader.hpp" />
+    <ClInclude Include="Skybox.h" />
+    <ClInclude Include="Texture\Texture Loader\stb_image.h" />
+    <ClInclude Include="Texture\texture.h" />
+    <ClInclude Include="Third Person Camera\ThirdPersonCamera.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
